@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhadawari Buffalo Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    /* General Body and Layout */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 30px;
+      background-color: #2980b9;
+      font-size: 1.1em;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #3498db;
+      transform: translateY(-5px);
+    }
+
+    .back-btn img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    /* Animal Image Section */
+    .animal-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+      transition: all 0.3s ease;
+    }
+
+    .animal-image {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .animal-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animal Information Section */
+    .animal-info {
+      background: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: none; /* Initially hidden */
+      text-align: left;
+    }
+
+    .animal-info h2 {
+      font-size: 2.5em;
+      color: #4CAF50;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .animal-info ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .animal-info li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .animal-info li strong {
+      margin-right: 8px;
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      font-size: 1.5em;
+    }
+
+    /* Unique Icons and Background Colors for Each Information */
+    .cost { background-color: #f39c12; }
+    .height { background-color: #e74c3c; }
+    .weight { background-color: #3498db; }
+    .colors { background-color: #2ecc71; }
+    .age { background-color: #9b59b6; }
+    .daughters { background-color: #1abc9c; }
+    .milk { background-color: #34495e; }
+    .climate { background-color: #e67e22; }
+    .district { background-color: #95a5a6; }
+
+    /* Information Icon and Details Button */
+    .details-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .details-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #2980b9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      margin-right: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .details-icon:hover {
+      transform: scale(1.1);
+      background-color: #3498db;
+    }
+
+    .details-link {
+      padding: 12px 30px;
+      background-color: #f39c12;
+      color: white;
+      font-size: 1.3em;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .details-link:hover {
+      background-color: #f1c40f;
+      transform: translateY(-5px);
+    }
+
+    /* Animation for Fade In */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Bhadawari Buffalo Breed</h1>
+    <a href="buffalo_breeds.html" class="back-btn">
+      <img src="https://via.placeholder.com/25" alt="Back Icon">
+      <span>Back to Buffalo Breeds</span>
+    </a>
+  </header>
+
+  <!-- Bhadawari Buffalo Image with Click to Show Information -->
+  <div class="animal-image-container">
+    <img src="bhadawari_buffalo.jpg" id="bhadawariImage" alt="Bhadawari Buffalo" class="animal-image" onclick="showAnimalInfo()">
+  </div>
+
+  <!-- "Click Here for Details" Button Below Image -->
+  <a href="javascript:void(0);" class="details-link" onclick="showAnimalInfo()">Click Here for Details</a>
+
+  <!-- Animal Information Section (Initially Hidden) -->
+  <div id="animalInfo" class="animal-info">
+    <h2>Bhadawari Buffalo Information</h2>
+    <ul>
+      <li class="cost"><strong>₹50,000</strong> Cost</li>
+      <li class="height"><strong>130 cm</strong> Height</li>
+      <li class="weight"><strong>500 kg</strong> Weight</li>
+      <li class="colors"><strong>Brown with White Spots</strong> Colors</li>
+      <li class="age"><strong>4 Years</strong> Age</li>
+      <li class="daughters"><strong>3</strong> Daughters Delivered</li>
+      <li class="milk"><strong>8 liters/day</strong> Milk Production</li>
+      <li class="climate"><strong>Hot and Dry (Uttar Pradesh)</strong> Climate Suitability</li>
+      <li class="district"><strong>Agra, Uttar Pradesh</strong> Original District</li>
+    </ul>
+  </div>
+
+  <!-- JavaScript for Showing Animal Info on Button Click -->
+  <script>
+    function showAnimalInfo() {
+      const animalInfo = document.getElementById('animalInfo');
+      animalInfo.style.display = 'block'; // Display animal information
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murrah Buffalo Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: slideInUp 1s;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .slider-image:hover {
+      transform: scale(1.05);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #4CAF50;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .animal-info {
+      background: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    .animal-info h2 {
+      font-size: 2.5em;
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+
+    .info-btn, .cart-btn {
+      margin: 20px 10px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #FF9800, #FFB74D);
+      color: #fff;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .info-btn:hover, .cart-btn:hover {
+      transform: translateY(-2px) rotate(-1deg);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .quantity-input {
+      padding: 10px;
+      font-size: 1.2em;
+      width: 80px;
+      text-align: center;
+      border: 2px solid #FF9800;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Murrah Buffalo Breed
+</header>
+
+<div class="slider-container">
+  <img id="sliderImage" src="murrah_buffalo_1.jpg" alt="Murrah Buffalo" class="slider-image">
+  <div class="arrow arrow-left" onclick="prevImage()">&#10094;</div>
+  <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
+</div>
+
+<button class="info-btn" onclick="toggleInfo()">Murrah Buffalo Information</button>
+
+<div id="animalInfo" class="animal-info">
+  <h2>Murrah Buffalo Information</h2>
+  <ul>
+    <li><strong>Cost:</strong> ₹67,000</li>
+    <li><strong>Height:</strong> 145 cm</li>
+    <li><strong>Weight:</strong> 600 kg</li>
+    <li><strong>Colors:</strong> Black</li>
+    <li><strong>Age:</strong> 5 Years, 6 Months</li>
+    <li><strong>Daughters Delivered:</strong> 4</li>
+    <li><strong>Milk Production:</strong> 15 liters/day</li>
+    <li><strong>Climate Suitability:</strong> Hot and Humid (Karnataka)</li>
+    <li><strong>Original District:</strong> Mandya, Karnataka</li>
+  </ul>
+
+  <h3>Add to Cart</h3>
+  <input id="quantity" class="quantity-input" type="number" min="1" value="1">
+  <button class="cart-btn" onclick="buyNow()">Buy Now</button>
+</div>
+
+<script>
+  const images = ["murrah_buffalo_1.jpg", "murrah_buffalo_2.jpg", "murrah_buffalo_3.jpg"];
+  let currentImageIndex = 0;
+
+  // Function to show the next image in the slider
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  // Function to show the previous image in the slider
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  // Function to toggle the visibility of the animal info section
+  function toggleInfo() {
+    const infoDiv = document.getElementById("animalInfo");
+    infoDiv.style.display = (infoDiv.style.display === "none" || infoDiv.style.display === "") ? "block" : "none";
+  }
+
+  // Function to handle the "Buy Now" action
+  function buyNow() {
+    const quantity = document.getElementById("quantity").value;
+    const queryParams = new URLSearchParams({
+      animal: "Murrah Buffalo",
+      quantity: quantity,
+      cost: 67000,
+    });
+    // Open buynow.html in a new tab with query parameters
+    window.open(`buynow.html?${queryParams.toString()}`, "_blank");
+  }
+</script>
+
+</body>
+</html>

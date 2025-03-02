@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Care for Cows and Buffaloes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #f0f8ff, #eaf2f8);
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2.8rem;
+      color: #00509e;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Tabs Styling */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #007acc;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 10px 10px 0 0;
+      background-color: #80d6ff;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    }
+
+    .tab:hover {
+      background-color: #4fc3f7;
+      transform: scale(1.05);
+    }
+
+    .active-tab {
+      background-color: #007acc;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Tab Content Styling */
+    .tab-content {
+      display: none;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      color: #00509e;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Nutrition Care for Cows and Buffaloes</h1>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active-tab" onclick="showTab('milk-yield')">Milk Yield</div>
+    <div class="tab" onclick="showTab('reproduction')">Reproduction</div>
+    <div class="tab" onclick="showTab('health')">General Health</div>
+    <div class="tab" onclick="showTab('seasonal')">Seasonal Care</div>
+    <div class="tab" onclick="showTab('young-animals')">Young Animals</div>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="milk-yield" class="tab-content active">
+    <h2>Milk Yield Enhancement for Cows and Buffaloes</h2>
+    <ul>
+      <li>Provide a **high-energy diet** with grains like maize, barley, and oats for both cows and buffaloes.</li>
+      <li>Ensure adequate **protein sources** such as soybean meal, cottonseed meal, or linseed meal to improve milk yield.</li>
+      <li>Feed a balanced ratio of **roughage and concentrates** like alfalfa hay and silage for better milk production.</li>
+      <li>Supplement with **calcium and phosphorus** for better milk quality and bone strength.</li>
+      <li>Include **leguminous fodders** like lucerne or berseem to provide high-quality protein.</li>
+    </ul>
+  </div>
+
+  <div id="reproduction" class="tab-content">
+    <h2>Reproductive Care for Cows and Buffaloes</h2>
+    <ul>
+      <li>Ensure a **high-protein diet** to support reproductive hormones and enhance fertility.</li>
+      <li>Provide **vitamins A, D, and E** to improve fertility and reduce pregnancy-related complications.</li>
+      <li>Offer **mineral-rich supplements** like calcium, phosphorus, and zinc for uterine health in both cows and buffaloes.</li>
+      <li>Include **flaxseed or fish oil** for Omega-3 fatty acids to support embryo development.</li>
+      <li>Increase energy intake using **molasses or cereal grains** during the breeding phase to support the reproductive cycle.</li>
+    </ul>
+  </div>
+
+  <div id="health" class="tab-content">
+    <h2>General Health Maintenance for Cows and Buffaloes</h2>
+    <ul>
+      <li>Provide **clean and fresh water** at all times for proper hydration and milk production.</li>
+      <li>Incorporate **fiber-rich fodders** like hay, silage, or grass for digestive health.</li>
+      <li>Supplement with **probiotics** to maintain gut health and improve immune function.</li>
+      <li>Avoid moldy or spoiled feed to prevent digestive disorders, especially in buffaloes.</li>
+      <li>Ensure balanced feed with **micronutrients** to reduce stress and minimize disease risks in both cows and buffaloes.</li>
+    </ul>
+  </div>
+
+  <div id="seasonal" class="tab-content">
+    <h2>Seasonal Nutrition Adjustments for Cows and Buffaloes</h2>
+    <ul>
+      <li>In **summer**, provide **electrolyte supplements** to prevent dehydration and heat stress.</li>
+      <li>In **winter**, increase energy feed to maintain body warmth for both cows and buffaloes.</li>
+      <li>Offer **succulent fodder** like green maize during dry seasons to maintain hydration and improve feed intake.</li>
+      <li>Adjust feed based on the availability of fodder during **rainy seasons** to ensure proper nutrition.</li>
+    </ul>
+  </div>
+
+  <div id="young-animals" class="tab-content">
+    <h2>Nutrition for Young Cows and Buffaloes</h2>
+    <ul>
+      <li>Provide **colostrum** to newborn calves within the first few hours after birth for immunity.</li>
+      <li>Gradually introduce **starter feeds** rich in protein to promote early growth in calves and young buffaloes.</li>
+      <li>Ensure proper intake of **milk or milk replacers** during the early months to support healthy growth.</li>
+      <li>Supplement with **minerals and vitamins** for bone, muscle development, and overall health.</li>
+    </ul>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const allTabs = document.querySelectorAll('.tab-content');
+      const allTabLinks = document.querySelectorAll('.tab');
+
+      allTabs.forEach(tab => tab.classList.remove('active'));
+      allTabLinks.forEach(tab => tab.classList.remove('active-tab'));
+
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active-tab');
+    }
+  </script>
+</body>
+</html>

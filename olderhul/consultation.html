@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Consultation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8fa;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2a4d69;
+      margin: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Tabs styling */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #1e88e5;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      animation: slideIn 1s ease-out;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .tab:hover {
+      background-color: #1565c0;
+      transform: scale(1.05);
+    }
+
+    .active {
+      background-color: #1565c0;
+    }
+
+    /* Tab content styling */
+    .tab-content {
+      display: none;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 20px auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    h3 {
+      color: #2a4d69;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      color: #1e88e5;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #1e88e5;
+      color: white;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #1565c0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 15px;
+      background-color: #ef5350;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-btn:hover {
+      background-color: #c62828;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Online Veterinary Consultation</h1>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('consultation')">Consultation Options</div>
+    <div class="tab" onclick="showTab('features')">Consultation Features</div>
+    <div class="tab" onclick="showTab('fees')">Consultation Fees</div>
+    <div class="tab" onclick="showTab('book')">Book Now</div>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="consultation" class="tab-content active">
+    <h3>Consultation Options</h3>
+    <p>We offer a variety of consultation services for your animals:</p>
+    <ul>
+      <li><strong>General Health Check-ups:</strong> Regular health checks to ensure your animal's overall well-being.</li>
+      <li><strong>Emergency Care:</strong> Immediate veterinary assistance for urgent health issues or accidents.</li>
+    </ul>
+  </div>
+
+  <div id="features" class="tab-content">
+    <h3>Consultation Features</h3>
+    <p>Choose from these convenient consultation formats:</p>
+    <ul>
+      <li><strong>Video Call:</strong> Connect with our veterinarians via live video for a detailed consultation.</li>
+      <li><strong>Voice Call:</strong> Speak with our experts over the phone if video isn’t required.</li>
+    </ul>
+  </div>
+
+  <div id="fees" class="tab-content">
+    <h3>Consultation Fees</h3>
+    <p>Our affordable consultation plans include:</p>
+    <ul>
+      <li><strong>General Health Check-ups:</strong> ₹15 per month</li>
+      <li><strong>Emergency Care:</strong> ₹25 per month</li>
+      <li><strong>Specialized Consultation:</strong> ₹70 per month</li>
+    </ul>
+  </div>
+
+  <div id="book" class="tab-content">
+    <h3>Book Your Consultation Now</h3>
+    <p>Click below to book an appointment with our veterinary experts:</p>
+    <a href="book.html" class="cta-button" target="_blank">Book Now</a>
+  </div>
+
+  <a href="veterinary.html" class="back-btn">Back to Veterinary Services</a>
+
+  <script>
+    // Function to show the clicked tab content
+    function showTab(tabId) {
+      // Hide all tab content
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(tab => tab.classList.remove('active'));
+
+      // Remove active class from all tabs
+      const allTabLinks = document.querySelectorAll('.tab');
+      allTabLinks.forEach(tab => tab.classList.remove('active'));
+
+      // Show the selected tab content
+      document.getElementById(tabId).classList.add('active');
+
+      // Add active class to clicked tab
+      const activeTab = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+      activeTab.classList.add('active');
+    }
+  </script>
+</body>
+</html>

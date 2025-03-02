@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Orders - Animal Herd Welfare Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #3949ab;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .orders-section {
+      width: 80%;
+      margin: 30px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #fafafa;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    .order-info {
+      flex: 1;
+    }
+
+    .order-info h3 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .order-info p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .order-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .order-actions button {
+      background-color: #3949ab;
+      color: white;
+      padding: 10px 15px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .order-actions button:hover {
+      background-color: #283593;
+    }
+
+    .back-button {
+      background-color: #f44336;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .back-button:hover {
+      background-color: #d32f2f;
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #3949ab;
+      color: white;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>User Orders</h1>
+    <p>Review and manage your orders and actions</p>
+  </header>
+
+  <!-- Orders Section -->
+  <section class="orders-section">
+    <div class="order-card">
+      <div class="order-info">
+        <h3>Order #101</h3>
+        <p>Status: <strong>Delivered</strong></p>
+        <p>Item: 3 Cows for milk production</p>
+        <p>Total: ₹35,000</p>
+      </div>
+      <div class="order-actions">
+        <button onclick="window.location.href='order-details.html'">View Details</button>
+        <button onclick="window.location.href='edit-order.html'">Edit Order</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-info">
+        <h3>Order #102</h3>
+        <p>Status: <strong>Pending</strong></p>
+        <p>Item: 2 Buffalos for milk production</p>
+        <p>Total: ₹28,000</p>
+      </div>
+      <div class="order-actions">
+        <button onclick="window.location.href='order-details.html'">View Details</button>
+        <button onclick="window.location.href='edit-order.html'">Edit Order</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-info">
+        <h3>Order #103</h3>
+        <p>Status: <strong>Delivered</strong></p>
+        <p>Item: Animal Feed for improved milk yield</p>
+        <p>Total: ₹5,000</p>
+      </div>
+      <div class="order-actions">
+        <button onclick="window.location.href='order-details.html'">View Details</button>
+        <button onclick="window.location.href='edit-order.html'">Edit Order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <a href="profile.html" class="back-button">Back to Profile</a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Animal Herd Welfare Management System | All Rights Reserved</p>
+    <p><a href="terms.html" style="color: white;">Terms of Service</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - Animal Herd Welfare Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .top-bar {
+      background-color: #283593;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 120px;
+      height: auto;
+    }
+
+    header {
+      text-align: center;
+      background-color: #3949ab;
+      padding: 20px;
+      color: white;
+    }
+
+    .profile-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Left side (profile content) */
+    .profile-left {
+      width: 48%;
+    }
+
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .profile-header .edit-button {
+      background-color: #1a237e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .profile-header .edit-button:hover {
+      background-color: #283593;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+
+    .profile-info label {
+      font-weight: bold;
+    }
+
+    .profile-info input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .save-button {
+      background-color: #3949ab;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    .save-button:hover {
+      background-color: #1a237e;
+    }
+
+    .back-button {
+      background-color: #f44336;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    .back-button:hover {
+      background-color: #d32f2f;
+    }
+
+    /* Right side (blank space) */
+    .profile-right {
+      width: 48%;
+      background-color: #f5f5f5; /* Optional: can leave this section empty */
+    }
+
+    footer {
+      background-color: #283593;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="top-bar">
+    <div class="logo">
+      <img src="top.jpg" alt="Animal Herd Welfare">
+    </div>
+    <div class="right">
+      <a href="#" style="color: #ffeb3b;">Profile</a>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <h1>User Profile - Animal Herd Welfare Management</h1>
+  </header>
+
+  <!-- Profile Section -->
+  <div class="profile-container">
+    <!-- Left Side (Profile Content) -->
+    <div class="profile-left">
+      <div class="profile-header">
+        <h1>John Doe</h1>
+        <button class="edit-button" onclick="editProfile()">Edit Profile</button>
+      </div>
+
+      <div class="profile-info">
+        <label for="username">Username:</label>
+        <input type="text" id="username" value="JohnDoe" disabled>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" value="johndoe@example.com" disabled>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" value="+1234567890" disabled>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" value="123 Main St, City, Country" disabled>
+
+        <label for="language">Language Preference:</label>
+        <input type="text" id="language" value="English" disabled>
+      </div>
+
+      <button class="save-button" onclick="saveProfile()">Save Changes</button>
+      <button class="back-button" onclick="goBack()">Back to Page</button>
+    </div>
+
+    <!-- Right Side (Blank Space) -->
+    <div class="profile-right">
+      <!-- Empty space on the right side -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Animal Herd Welfare Management System | All Rights Reserved</p>
+    <p><a href="terms.html" style="color: white;">Terms of Service</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    function editProfile() {
+      const inputs = document.querySelectorAll('.profile-info input');
+      inputs.forEach(input => input.disabled = false);
+      document.querySelector('.save-button').style.display = 'inline-block';
+    }
+
+    function saveProfile() {
+      const inputs = document.querySelectorAll('.profile-info input');
+      inputs.forEach(input => input.disabled = true);
+      document.querySelector('.save-button').style.display = 'none';
+      alert("Profile saved successfully!");
+    }
+
+    function goBack() {
+      window.location.href = 'saya.html';
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendly Reply with Dynamic Style</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            transition: background 0.5s ease;
+        }
+        .message-box {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .message-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        .reply {
+            color: #2ecc71;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .message {
+            color: #555;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const colors = ['#ffecd2', '#fcb69f', '#ff9a9e', '#fad0c4', '#a1c4fd', '#c2e9fb'];
+            let index = 0;
+
+            setInterval(() => {
+                index = (index + 1) % colors.length;
+                body.style.background = `linear-gradient(135deg, ${colors[index]}, ${colors[(index + 1) % colors.length]})`;
+            }, 5000);
+        });
+    </script>
+</head>
+<body>
+    <div class="message-box">
+        <p class="reply">Hey! Of course I'm listening! 😊</p>
+        <p class="message">I’m right here, tell me what’s on your mind!</p>
+    </div>
+</body>
+</html>

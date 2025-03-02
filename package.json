@@ -1,0 +1,16 @@
+{
+    "name": "animal-herd-welfare-system",
+    "version": "1.0.0",
+    "description": "User management for the Animal Herd Welfare System",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "keywords": ["farm", "animal", "profile", "user management"],
+    "author": "Ullas S A",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  

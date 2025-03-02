@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services and Schemes</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4caf50, #2196f3);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #ffeb3b;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        li {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-link {
+            text-decoration: none;
+            color: #2196f3;
+            font-size: 1.2rem;
+        }
+
+        .service-link:hover {
+            text-decoration: underline;
+        }
+
+        .youtube-link {
+            font-size: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .youtube-link:hover {
+            background-color: #d50000;
+        }
+
+        /* Add decorative patterns or background shapes */
+        .decorative-background {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 200px;
+            background: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
+            background-size: cover;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Services and Schemes</h1>
+    <ul>
+        <li>
+            <div>
+                <a href="https://kawb.karnataka.gov.in/info-3/Punyakoti+Adoption+Scheme/en" 
+                   target="_blank" 
+                   class="service-link">
+                    Punyakoti Adoption Scheme
+                </a>
+                <p>A scheme that allows citizens to adopt cows.</p>
+            </div>
+            <a href="https://youtu.be/OnpGhHIjb1s?si=5f6jHQm0qoAyRoKw" 
+               target="_blank" 
+               class="youtube-link">Watch Video</a>
+        </li>
+        <li>
+            <div>
+                <a href="https://ahidf.udyamimitra.in/" 
+                   target="_blank" 
+                   class="service-link">
+                    AHIDF
+                </a>
+                <p>Financial assistance for dairy and livestock infrastructure.</p>
+            </div>
+            <a href="https://youtu.be/b9lxrecXI7g?si=Ghn0MNEaGFmEsHmJ" 
+               target="_blank" 
+               class="youtube-link">Watch Video</a>
+        </li>
+    </ul>
+    <div class="decorative-background"></div>
+</body>
+</html>

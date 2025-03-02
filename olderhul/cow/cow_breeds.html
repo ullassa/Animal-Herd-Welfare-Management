@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cow Breeds</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2980b9;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .breed-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+
+        .breed {
+            width: 250px;
+            height: 250px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        .breed:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .breed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .breed-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2980b9;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .breed-name a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .breed-name a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Cow Breeds</h1>
+
+<div class="breed-container">
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Holstein" alt="Holstein">
+        <div class="breed-name"><a href="holstein_breed.html">Holstein</a></div>
+    </div>
+
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Jersey" alt="Jersey">
+        <div class="breed-name"><a href="jersey_breed.html">Jersey</a></div>
+    </div>
+
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Ayrshire" alt="Ayrshire">
+        <div class="breed-name"><a href="ayrshire_breed.html">Ayrshire</a></div>
+    </div>
+
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Guernsey" alt="Guernsey">
+        <div class="breed-name"><a href="guernsey_breed.html">Guernsey</a></div>
+    </div>
+
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Brown+Swiss" alt="Brown Swiss">
+        <div class="breed-name"><a href="brown_swiss_breed.html">Brown Swiss</a></div>
+    </div>
+
+    <div class="breed">
+        <img src="https://via.placeholder.com/250x250?text=Red+Poll" alt="Red Poll">
+        <div class="breed-name"><a href="red_poll_breed.html">Red Poll</a></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Consultation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2a4d69;
+      margin: 30px;
+      font-size: 2.5rem;
+    }
+
+    .breadcrumb {
+      background-color: #e3f2fd;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: #1e88e5;
+      margin-right: 10px;
+    }
+
+    .breadcrumb span {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #1e88e5;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #1e88e5;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #1565c0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 15px;
+      background-color: #ef5350;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-btn:hover {
+      background-color: #c62828;
+    }
+  </style>
+</head>
+<body>
+  <!-- Breadcrumb Navigation -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>&gt;</span>
+    <a href="veterinary.html">Veterinary Services</a>
+    <span>&gt;</span>
+    <span>Book Consultation</span>
+  </div>
+
+  <h1>Book Your Veterinary Consultation</h1>
+
+  <div class="form-container">
+    <h2>Consultation Booking Form</h2>
+    <form action="submit_booking.php" method="POST">
+      
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <!-- Contact Number -->
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <!-- Consultation Type -->
+      <div class="form-group">
+        <label for="consultation-type">Type of Consultation:</label>
+        <select id="consultation-type" name="consultation_type" required>
+          <option value="health-checkup">General Health Check-up</option>
+          <option value="emergency-care">Emergency Care</option>
+          <option value="specialized">Specialized Consultation</option>
+        </select>
+      </div>
+
+      <!-- Preferred Date and Time -->
+      <div class="form-group">
+        <label for="preferred-time">Preferred Date and Time:</label>
+        <input type="datetime-local" id="preferred-time" name="preferred_time" required>
+      </div>
+
+      <!-- Additional Notes -->
+      <div class="form-group">
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Optional" style="resize: vertical;"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <input type="submit" value="Book Consultation">
+      </div>
+    </form>
+    
+    <a href="saya.html" class="back-btn">Back to Home</a>
+  </div>
+
+</body>
+</html>

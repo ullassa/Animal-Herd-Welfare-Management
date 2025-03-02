@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buffalo Accessories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #f39c12, #e74c3c);
+      color: white;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin: 20px 0;
+      color: #f3e5ab;
+      text-shadow: 0 0 5px #5d5c61;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .accessory-icon {
+      background: linear-gradient(145deg, #34495e, #2c3e50);
+      border-radius: 20px;
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .accessory-icon img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .accessory-info {
+      font-size: 1rem;
+      color: #ecf0f1;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .accessory-icon:hover .accessory-info {
+      opacity: 1;
+    }
+
+    .accessory-details {
+      display: none;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #f39c12, #e74c3c);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #e74c3c, #c0392b);
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Essential Accessories for Buffaloes 🐃</h1>
+
+  <div class="section">
+    <!-- Milking Machine -->
+    <div class="accessory-icon" onclick="toggleInfo('milking-machine')">
+      <img src="milking_machine_icon.png" alt="Milking Machine">
+      <div class="accessory-info">Efficient milking process</div>
+    </div>
+    <div id="milking-machine" class="accessory-details">
+      The milking machine for buffaloes provides a fast and hygienic way of extracting milk, improving productivity.
+    </div>
+
+    <!-- Feeding Trough -->
+    <div class="accessory-icon" onclick="toggleInfo('feeding-trough')">
+      <img src="feeding_trough_icon.png" alt="Feeding Trough">
+      <div class="accessory-info">Prevent food wastage</div>
+    </div>
+    <div id="feeding-trough" class="accessory-details">
+      The feeding trough for buffaloes ensures they receive a balanced diet without wasting food, promoting better health.
+    </div>
+
+    <!-- Buffalo Halter -->
+    <div class="accessory-icon" onclick="toggleInfo('buffalo-halter')">
+      <img src="buffalo_halter_icon.png" alt="Buffalo Halter">
+      <div class="accessory-info">Safe and secure control</div>
+    </div>
+    <div id="buffalo-halter" class="accessory-details">
+      A halter specifically designed for buffaloes helps in managing their movement, especially during milking or transportation.
+    </div>
+
+    <!-- Automatic Waterer -->
+    <div class="accessory-icon" onclick="toggleInfo('automatic-waterer')">
+      <img src="automatic_waterer_icon.png" alt="Automatic Waterer">
+      <div class="accessory-info">Continuous water supply</div>
+    </div>
+    <div id="automatic-waterer" class="accessory-details">
+      The automatic waterer ensures that buffaloes have access to fresh water all the time, improving overall health.
+    </div>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">Go Back</button>
+
+  <script>
+    function toggleInfo(id) {
+      const details = document.getElementById(id);
+      if (details.style.display === "block") {
+        details.style.display = "none";
+      } else {
+        details.style.display = "block";
+      }
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

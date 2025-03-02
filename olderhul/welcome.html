@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Animal Herd Welfare System</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeInBackground 3s ease-out;
+        }
+
+        @keyframes fadeInBackground {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .journey-container {
+            text-align: center;
+            color: #2e7d32;
+            animation: fadeInText 3s ease-out;
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .animal-icon {
+            font-size: 120px;
+            opacity: 0;
+            animation: moveIn 2s ease-out forwards, float 3s ease-in-out infinite alternate;
+            transform-origin: center center;
+        }
+
+        .cow {
+            animation-delay: 1s;
+        }
+
+        .buffalo {
+            animation-delay: 1s;
+        }
+
+        @keyframes moveIn {
+            0% {
+                opacity: 0;
+                transform: translateX(100vw) rotate(60deg) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px); /* Floating up */
+            }
+            100% {
+                transform: translateY(0); /* Floating back down */
+            }
+        }
+
+        .path {
+            width: 0%;
+            height: 2px;
+            background: #388e3c;
+            position: absolute;
+            top: 85%;
+            animation: pathGrowth 4s ease-out forwards;
+        }
+
+        @keyframes pathGrowth {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .message {
+            font-size: 28px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: messageAppear 3s ease-out 4s forwards;
+        }
+
+        @keyframes messageAppear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .action-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: #66bb6a;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="journey-container">
+        <!-- Cow icon with animation from left -->
+        <div class="animal-icon cow">🐄</div>
+        <!-- Buffalo icon with animation from right -->
+        <div class="animal-icon buffalo">🐃</div>
+        <div class="path"></div>
+        <div class="message">Welcome to a journey of growth, care, and sustainability for your farm and animals!</div>
+        <button class="action-btn" onclick="window.location.href='saya.html'">Start Your Journey</button>
+    </div>
+</body>
+</html>

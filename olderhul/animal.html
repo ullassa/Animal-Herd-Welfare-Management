@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Selector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3.5rem; /* Increased font size */
+      text-align: center;
+      margin: 20px 0;
+      color: #f3e5ab;
+      text-shadow: 0 0 5px #5d5c61;
+    }
+
+    /* Tab Navigation */
+    .tab-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px; /* Increased gap between tabs */
+      margin-top: 20px;
+    }
+
+    .tab {
+      background: linear-gradient(to right, #89fffd, #4a69bd);
+      padding: 20px 40px; /* Increased padding for larger tabs */
+      border-radius: 30px; /* More rounded tabs */
+      font-size: 2rem; /* Larger text */
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .tab:hover {
+      background: linear-gradient(to right, #4a69bd, #2980b9);
+    }
+
+    /* Animal Section Styles */
+    .animal-section {
+      display: none;
+      justify-content: center;
+      gap: 50px; /* Increased gap between animal containers */
+      padding: 50px; /* More padding */
+      flex-wrap: wrap;
+    }
+
+    .animal-container {
+      background: linear-gradient(145deg, #34495e, #2c3e50);
+      border-radius: 20px;
+      width: 350px; /* Increased width */
+      text-align: center;
+      padding: 30px; /* Increased padding */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0; /* Increased margin */
+    }
+
+    .icons .icon {
+      background: linear-gradient(135deg, #2980b9, #3498db);
+      border-radius: 50%;
+      width: 100px; /* Larger icons */
+      height: 100px; /* Larger icons */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .icons .icon img {
+      width: 60%; /* Increase image size */
+      height: 60%; /* Increase image size */
+    }
+
+    .animal-name {
+      font-size: 2rem; /* Larger font size for animal name */
+      font-weight: bold;
+      color: #ecf0f1;
+    }
+
+    /* Information Section */
+    #animal-info {
+      display: none;
+      text-align: center;
+      padding: 50px; /* Increased padding */
+      background: linear-gradient(135deg, #3498db, #6a11cb);
+      color: white;
+      border-radius: 15px;
+      margin: 30px auto;
+      width: 80%;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    #animal-info h2 {
+      font-size: 3rem; /* Increased font size */
+    }
+
+    #animal-info p {
+      font-size: 1.4rem; /* Increased font size */
+      line-height: 1.6;
+    }
+
+    .home-btn {
+      margin-top: 20px;
+      padding: 15px 30px; /* Larger padding */
+      background: linear-gradient(to right, #6a89cc, #4a69bd);
+      border: none;
+      border-radius: 25px; /* Rounder button */
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem; /* Larger font size */
+    }
+
+    .home-btn:hover {
+      background: linear-gradient(to right, #4a69bd, #3b3b98);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose Your Animal ✨</h1>
+
+  <div class="tab-container">
+    <div class="tab" onclick="showSection('cow')">Cows 🐄</div>
+    <div class="tab" onclick="showSection('buffalo')">Buffaloes 🐃</div>
+  </div>
+
+  <div class="animal-section" id="cow-section">
+    <div class="animal-container">
+      <div class="icons">
+        <div class="icon" onclick="openPage('cow')"><img src="cow_breeds.png" alt="Breed"></div>
+        <div class="icon" onclick="openPage('accessories_cow')"><img src="cow_accessories.png" alt="Accessories"></div>
+      </div>
+      <div class="animal-name">Cows 🐄</div>
+    </div>
+  </div>
+
+  <div class="animal-section" id="buffalo-section">
+    <div class="animal-container">
+      <div class="icons">
+        <div class="icon" onclick="openPage('buffalo')"><img src="buffalo_breeds.png" alt="Breed"></div>
+        <div class="icon" onclick="openPage('accessories_buffalo')"><img src="buffalo_accessories.png" alt="Accessories"></div>
+      </div>
+      <div class="animal-name">Buffaloes 🐃</div>
+    </div>
+  </div>
+
+  <div id="animal-info">
+    <h2>Animal Information</h2>
+    <p id="info-text">Details will appear here when you select an option.</p>
+    <button class="home-btn" onclick="navigateToHome()">Go to Home</button>
+  </div>
+
+  <script>
+    function showSection(animalType) {
+      document.getElementById('cow-section').style.display = animalType === 'cow' ? 'flex' : 'none';
+      document.getElementById('buffalo-section').style.display = animalType === 'buffalo' ? 'flex' : 'none';
+      document.getElementById('animal-info').style.display = 'none';
+    }
+
+    function openPage(animalType) {
+      let page;
+      if (animalType === 'cow') {
+        page = 'cow_breeds.html';
+      } else if (animalType === 'buffalo') {
+        page = 'buffalo_breeds.html';
+      } else if (animalType === 'accessories_cow') {
+        page = 'cow_accessories.html';
+      } else if (animalType === 'accessories_buffalo') {
+        page = 'buffalo_accessories.html';
+      }
+      window.location.href = page;
+    }
+
+    function navigateToHome() {
+      window.location.href = "saya.html";
+    }
+  </script>
+
+</body>
+</html>

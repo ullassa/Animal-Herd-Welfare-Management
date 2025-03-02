@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brown Swiss Cow Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #eef2f3;
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    header {
+      background-color: #34495e;
+      color: white;
+      padding: 20px;
+      font-size: 2.5em;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: white;
+      background-color: #16a085;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      margin: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #1abc9c;
+    }
+
+    .image-container {
+      padding: 30px 0;
+    }
+
+    .cow-image {
+      width: 70%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-container {
+      background-color: #ffffff;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-container h2 {
+      color: #34495e;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .info-container ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+      text-align: left;
+    }
+
+    .info-container ul li {
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .details-btn {
+      padding: 12px 30px;
+      background-color: #2980b9;
+      color: white;
+      font-size: 1.3em;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    .details-btn:hover {
+      background-color: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    Brown Swiss Cow Breed
+    <a href="cow_breeds.html" class="back-btn">Back to Cow Breeds</a>
+  </header>
+
+  <!-- Brown Swiss Cow Image -->
+  <div class="image-container">
+    <img src="brown_swiss_cow.jpg" alt="Brown Swiss Cow" class="cow-image">
+  </div>
+
+  <!-- "Click Here for Details" Button -->
+  <a href="javascript:void(0);" class="details-btn" onclick="showInfo()">Click Here for Details</a>
+
+  <!-- Cow Information -->
+  <div id="cowInfo" class="info-container" style="display: none;">
+    <h2>Brown Swiss Cow Information</h2>
+    <ul>
+      <li><strong>₹90,000</strong> Cost</li>
+      <li><strong>140 cm</strong> Height</li>
+      <li><strong>650 kg</strong> Weight</li>
+      <li><strong>Brown</strong> Color</li>
+      <li><strong>5 Years</strong> Age</li>
+      <li><strong>8 Liters/Day</strong> Milk Production</li>
+      <li><strong>Temperate Climate</strong> Climate Suitability</li>
+      <li><strong>Chikmagalur, Karnataka</strong> Origin District</li>
+    </ul>
+  </div>
+
+  <script>
+    function showInfo() {
+      document.getElementById('cowInfo').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

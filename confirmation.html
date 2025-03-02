@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultation Approved</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .confirmation-message {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #2a4d69;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="confirmation-message">
+  <h2>Consultation Approved!</h2>
+  <p>Thank you, <span id="name"></span>.</p>
+  <p>Your consultation has been approved on:</p>
+  <p><strong id="preferred-time"></strong></p>
+  <p>We appreciate your trust in us and look forward to serving you!</p>
+  <button onclick="window.location.href='saya.html'">Back to Home</button>
+</div>
+
+<script>
+  // Get query params and display them
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("name").textContent = params.get("name") || "Guest";
+  document.getElementById("preferred-time").textContent = params.get("preferred_time") || "Not specified";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jersey Cow Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #FF5733, #FF8D72);
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .slider-image:hover {
+      transform: scale(1.05);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .arrow:hover {
+      background: #FF5733;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .animal-info {
+      background: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: none;
+    }
+
+    .animal-info h2 {
+      font-size: 2.5em;
+      color: #FF5733;
+      margin-bottom: 15px;
+    }
+
+    .info-btn, .cart-btn {
+      margin: 20px 10px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #FFC300, #FFDA79);
+      color: #fff;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .cart-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .quantity-input {
+      padding: 10px;
+      font-size: 1.2em;
+      width: 80px;
+      text-align: center;
+      border: 2px solid #FFC300;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Jersey Cow Breed
+</header>
+
+<div class="slider-container">
+  <img id="sliderImage" src="jersy3.jpg" alt="Jersey Cow" class="slider-image">
+  <div class="arrow arrow-left" onclick="prevImage()">&#10094;</div>
+  <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
+</div>
+
+<button class="info-btn" onclick="toggleInfo()">Jersey Cow Information</button>
+
+<div id="animalInfo" class="animal-info">
+  <h2>Jersey Cow Information</h2>
+  <ul>
+    <li><strong>₹70,000</strong> Cost</li>
+    <li><strong>120 cm</strong> Height</li>
+    <li><strong>500 kg</strong> Weight</li>
+    <li><strong>Light Brown</strong> Colors</li>
+    <li><strong>4 years</strong> Age</li>
+    <li><strong>5 Liters/Day</strong> Milk Production</li>
+    <li><strong>Cool Climate</strong> Climate Suitability</li>
+    <li><strong>Coorg, Karnataka</strong> Origin District</li>
+  </ul>
+
+  <h3>Add to Cart</h3>
+  <input id="quantity" class="quantity-input" type="number" min="1" value="1">
+  <button class="cart-btn" onclick="buyNow()">Buy Now</button>
+</div>
+
+<script>
+  const images = ["jersy.jpeg", "jersy1.jpg", "jersy2.jpeg"];
+  let currentImageIndex = 0;
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  function toggleInfo() {
+    const infoDiv = document.getElementById("animalInfo");
+    infoDiv.style.display = infoDiv.style.display === "none" ? "block" : "none";
+  }
+
+  function buyNow() {
+    const quantity = document.getElementById("quantity").value;
+    const queryParams = new URLSearchParams({
+      animal: "Jersey Cow",
+      quantity: quantity,
+      cost: 70000 * quantity,
+    });
+    window.open(`buynow1.html?${queryParams.toString()}`, "_blank");
+  }
+</script>
+
+</body>
+</html>

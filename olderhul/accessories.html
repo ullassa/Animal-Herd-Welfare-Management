@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Accessories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin: 20px 0;
+      color: #f3e5ab;
+      text-shadow: 0 0 5px #5d5c61;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .accessory-container {
+      background: linear-gradient(145deg, #34495e, #2c3e50);
+      border-radius: 20px;
+      width: 80%;
+      max-width: 800px;
+      padding: 30px;
+      margin: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .accessory-container h2 {
+      font-size: 2rem;
+      color: #ecf0f1;
+    }
+
+    .accessory-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .accessory-list li {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #ecf0f1;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #6a89cc, #4a69bd);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #4a69bd, #3b3b98);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Essential Accessories for Cows & Buffaloes</h1>
+
+  <div class="section">
+    <div class="accessory-container">
+      <h2>Accessories for Cows 🐄</h2>
+      <ul class="accessory-list">
+        <li>1. **Milking Machine** - Used to efficiently extract milk without causing stress to the cow.</li>
+        <li>2. **Feeding Troughs** - Ensures cows receive adequate nutrition.</li>
+        <li>3. **Cow Bells** - For easy identification and tracking of cows.</li>
+        <li>4. **Cow Halters** - For safe handling and control of cows during transportation or milking.</li>
+        <li>5. **Thermometers** - To monitor the health of the cows and detect any temperature abnormalities.</li>
+        <li>6. **Automatic Waterers** - Ensures cows have a constant supply of clean water.</li>
+        <li>7. **Nutritional Supplements** - Adds minerals and vitamins to the cows' diet to improve milk production.</li>
+      </ul>
+    </div>
+
+    <div class="accessory-container">
+      <h2>Accessories for Buffaloes 🐃</h2>
+      <ul class="accessory-list">
+        <li>1. **Buffalo Milking Machines** - Similar to cows, buffaloes also require efficient milking systems.</li>
+        <li>2. **Buffalo Neck Bells** - For identification and easy tracking.</li>
+        <li>3. **Buffalo Halters** - Allows for easy control and movement of the buffaloes.</li>
+        <li>4. **Feeding Troughs** - Ensures buffaloes are fed in an organized manner.</li>
+        <li>5. **Buffalo Shoes** - Protects the hooves of buffaloes, especially in rough terrain.</li>
+        <li>6. **Health Monitoring Devices** - To track vital signs like temperature and heart rate.</li>
+        <li>7. **Water Supply Systems** - Buffaloes require significant amounts of water, especially in warmer climates.</li>
+      </ul>
+    </div>
+
+    <button class="back-btn" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

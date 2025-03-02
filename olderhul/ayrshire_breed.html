@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayrshire Cow Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f1f1;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #1abc9c;
+      color: white;
+      padding: 20px;
+      font-size: 2.5em;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #fff;
+      background-color: #e74c3c;
+      padding: 12px 35px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      margin: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #c0392b;
+    }
+
+    .image-container {
+      padding: 30px 0;
+    }
+
+    .cow-image {
+      width: 75%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .info-container {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-container h2 {
+      color: #8e44ad;
+      font-size: 2.5em;
+    }
+
+    .info-container ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+    }
+
+    .info-container li {
+      padding: 8px;
+      margin-bottom: 12px;
+      background-color: #f5f6fa;
+      border-radius: 5px;
+    }
+
+    .details-btn {
+      padding: 12px 35px;
+      background-color: #f39c12;
+      color: white;
+      font-size: 1.3em;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    .details-btn:hover {
+      background-color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    Ayrshire Cow Breed
+    <a href="cow_breeds.html" class="back-btn">Back to Cow Breeds</a>
+  </header>
+
+  <!-- Ayrshire Cow Image -->
+  <div class="image-container">
+    <img src="ayrshire_cow.jpg" alt="Ayrshire Cow" class="cow-image">
+  </div>
+
+  <!-- "Click Here for Details" Button -->
+  <a href="javascript:void(0);" class="details-btn" onclick="showInfo()">Click Here for Details</a>
+
+  <!-- Cow Information -->
+  <div id="cowInfo" class="info-container" style="display: none;">
+    <h2>Ayrshire Cow Information</h2>
+    <ul>
+      <li><strong>₹75,000</strong> Cost</li>
+      <li><strong>130 cm</strong> Height</li>
+      <li><strong>600 kg</strong> Weight</li>
+      <li><strong>Red and White</strong> Colors</li>
+      <li><strong>3 years</strong> Age</li>
+      <li><strong>6 Liters/Day</strong> Milk Production</li>
+      <li><strong>Cool Climate</strong> Climate Suitability</li>
+      <li><strong>Mysore, Karnataka</strong> Origin District</li>
+    </ul>
+  </div>
+
+  <script>
+    function showInfo() {
+      document.getElementById('cowInfo').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

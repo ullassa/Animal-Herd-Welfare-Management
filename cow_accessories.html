@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essential Accessories</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #FF5733, #FF8D72);
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .cart-section {
+      width: 25%;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      height: 100vh;
+    }
+
+    .cart-section h2 {
+      color: #FF5733;
+    }
+
+    .cart-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-items li {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .machine-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      width: 75%;
+    }
+
+    .machine-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .machine-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .add-to-cart {
+      background: #27ae60;
+    }
+
+    .buy-now {
+      background: #e74c3c;
+    }
+
+    .quantity-btn {
+      background: #FF5733;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Essential Accessories for Buffaloes 🛠️
+</header>
+
+<div class="container">
+  <div class="cart-section">
+    <h2>Your Cart 🛒</h2>
+    <ul id="cart" class="cart-items">
+      <li>No items in cart</li>
+    </ul>
+  </div>
+
+  <div class="machine-gallery">
+    <div class="machine-card">
+      <img src="buffalo-milking-machine.jpg" alt="Buffalo Milking Machine">
+      <h3>Buffalo Milking Machine</h3>
+      <div class="btn-container">
+        <button class="btn add-to-cart" onclick="addToCart('Buffalo Milking Machine')">Add to Cart</button>
+        <a href="buynow2.html" class="btn buy-now">Buy Now</a>
+      </div>
+    </div>
+    <div class="machine-card">
+      <img src="automatic-waterer.jpg" alt="Automatic Waterer">
+      <h3>Automatic Waterer</h3>
+      <div class="btn-container">
+        <button class="btn add-to-cart" onclick="addToCart('Automatic Waterer')">Add to Cart</button>
+        <a href="buynow2.html" class="btn buy-now">Buy Now</a>
+      </div>
+    </div>
+    <div class="machine-card">
+      <img src="hoof-trimmer.jpg" alt="Hoof Trimmer">
+      <h3>Hoof Trimmer</h3>
+      <div class="btn-container">
+        <button class="btn add-to-cart" onclick="addToCart('Hoof Trimmer')">Add to Cart</button>
+        <a href="buynow2.html" class="btn buy-now">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let cart = {};
+
+  function addToCart(item) {
+    if (cart[item]) {
+      cart[item] += 1;
+    } else {
+      cart[item] = 1;
+    }
+    updateCartUI();
+  }
+
+  function increaseQuantity(item) {
+    cart[item] += 1;
+    updateCartUI();
+  }
+
+  function decreaseQuantity(item) {
+    if (cart[item] > 1) {
+      cart[item] -= 1;
+    } else {
+      delete cart[item];
+    }
+    updateCartUI();
+  }
+
+  function updateCartUI() {
+    const cartElement = document.getElementById('cart');
+    cartElement.innerHTML = '';
+    for (const item in cart) {
+      cartElement.innerHTML += `
+        <li>
+          ${item} - Quantity: ${cart[item]}
+          <button class="quantity-btn" onclick="increaseQuantity('${item}')">+</button>
+          <button class="quantity-btn" onclick="decreaseQuantity('${item}')">-</button>
+        </li>`;
+    }
+  }
+</script>
+
+</body>
+</html>

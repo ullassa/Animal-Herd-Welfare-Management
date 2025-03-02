@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murrah Buffalo Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    /* General Body and Layout */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 30px;
+      background-color: #2980b9;
+      font-size: 1.1em;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #3498db;
+      transform: translateY(-5px);
+    }
+
+    .back-btn img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    /* Animal Image Section */
+    .animal-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+      transition: all 0.3s ease;
+    }
+
+    .animal-image {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .animal-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animal Information Section */
+    .animal-info {
+      background: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-out;
+      display: none; /* Initially hidden */
+    }
+
+    .animal-info h2 {
+      font-size: 2.5em;
+      color: #4CAF50;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .animal-info ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .animal-info li {
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .animal-info li strong {
+      color: #2980b9;
+    }
+
+    /* More Details Button */
+    .details-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #2980b9;
+      color: white;
+      font-size: 1.3em;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .details-link:hover {
+      background-color: #3498db;
+      transform: translateY(-5px);
+    }
+
+    /* Animation for Image Enlarge */
+    @keyframes enlargeAnimation {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.5);
+      }
+    }
+
+    .animal-image.enlarged {
+      animation: enlargeAnimation 0.3s ease-in-out forwards;
+    }
+
+    /* Fade In for Content */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Murrah Buffalo Breed</h1>
+    <a href="buffalo_breed.html" class="back-btn">
+      <img src="https://via.placeholder.com/25" alt="Back Icon">
+      <span>Back to Buffalo Breeds</span>
+    </a>
+  </header>
+
+  <!-- Murrah Buffalo Image with Click to Show Information -->
+  <div class="animal-image-container">
+    <img src="murrah_buffalo.jpg" id="murrahImage" alt="Murrah Buffalo" class="animal-image" onclick="showAnimalInfo()">
+  </div>
+
+  <!-- Animal Information Section (Initially Hidden) -->
+  <div id="animalInfo" class="animal-info">
+    <h2>Murrah Buffalo Information</h2>
+    <ul>
+      <li><strong>Cost:</strong> $1500</li>
+      <li><strong>Height:</strong> 145 cm</li>
+      <li><strong>Weight:</strong> 600 kg</li>
+      <li><strong>Colors:</strong> Black</li>
+      <li><strong>Age:</strong> 5 Years, 6 Months</li>
+      <li><strong>Daughters Delivered:</strong> 4</li>
+      <li><strong>Milk Production:</strong> 15 liters/day</li>
+      <li><strong>Climate Suitability:</strong> Hot and Humid</li>
+      <li><strong>Original District:</strong> Murrah, Haryana</li>
+    </ul>
+    <a href="https://animal-info.com/murrah" class="details-link" target="_blank">Click Here for More Details</a>
+  </div>
+
+  <!-- JavaScript for Showing Animal Info on Image Click -->
+  <script>
+    function showAnimalInfo() {
+      const animalInfo = document.getElementById('animalInfo');
+      animalInfo.style.display = 'block'; // Display animal information
+    }
+  </script>
+
+</body>
+</html>

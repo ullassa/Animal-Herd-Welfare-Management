@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaffarabadi Buffalo Breed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+      padding: 20px;
+      color: #fff;
+      font-size: 2em;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: slideInUp 1s;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .slider-image:hover {
+      transform: scale(1.05);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #4CAF50;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .animal-info {
+      background: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    .animal-info h2 {
+      font-size: 2.5em;
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+
+    .info-btn, .cart-btn {
+      margin: 20px 10px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #FF9800, #FFB74D);
+      color: #fff;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .info-btn:hover, .cart-btn:hover {
+      transform: translateY(-2px) rotate(-1deg);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .quantity-input {
+      padding: 10px;
+      font-size: 1.2em;
+      width: 80px;
+      text-align: center;
+      border: 2px solid #FF9800;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Jaffarabadi Buffalo Breed
+</header>
+
+<div class="slider-container">
+  <img id="sliderImage" src="jafrabadi.jpg" alt="Jafrabadi Buffalo" class="slider-image">
+  <div class="arrow arrow-left" onclick="prevImage()">&#10094;</div>
+  <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
+</div>
+
+<button class="info-btn" onclick="toggleInfo()">Jaffarabadi Buffalo Information</button>
+
+<div id="animalInfo" class="animal-info">
+  <h2>Jaffarabadi Buffalo Information</h2>
+    <ul>
+      <li class="cost"><strong>₹85,000</strong> Cost</li>
+      <li class="height"><strong>155 cm</strong> Height</li>
+      <li class="weight"><strong>650 kg</strong> Weight</li>
+      <li class="colors"><strong>Jet Black</strong> Colors</li>
+      <li class="age"><strong>6 Years</strong> Age</li>
+      <li class="daughters"><strong>5</strong> Daughters Delivered</li>
+      <li class="milk"><strong>18 liters/day</strong> Milk Production</li>
+      <li class="climate"><strong>Hot and Humid (Gujarat)</strong> Climate Suitability</li>
+      <li class="district"><strong>Junagadh, Gujarat</strong> Original District</li>
+    </ul>
+
+  <h3>Add to Cart</h3>
+  <input id="quantity" class="quantity-input" type="number" min="1" value="1">
+  <button class="cart-btn" onclick="buyNow()">Buy Now</button>
+</div>
+
+<script>
+  const images = ["jafrabadi.jpg", "jaffarabadi_breed1..jpeg", "jaffarabadi_breed2..jpeg"];
+  let currentImageIndex = 0;
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById("sliderImage").src = images[currentImageIndex];
+  }
+
+  function toggleInfo() {
+    const infoDiv = document.getElementById("animalInfo");
+    infoDiv.style.display = (infoDiv.style.display === "none" || infoDiv.style.display === "") ? "block" : "none";
+  }
+
+  function buyNow() {
+    const quantity = document.getElementById("quantity").value;
+    const queryParams = new URLSearchParams({
+      animal: "Jaffarabadi Buffalo",
+      quantity: quantity,
+      cost: 85000,
+    });
+    window.open(`buynow.html?${queryParams.toString()}`, "_blank");
+  }
+</script>
+
+</body>
+</html>

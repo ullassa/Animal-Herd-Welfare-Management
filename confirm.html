@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .confirmation-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    .details {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="confirmation-container">
+  <h2>🎉 Your Order Has Been Confirmed! 🎉</h2>
+  <p>Thank you for your purchase. Here are your order details:</p>
+  
+  <div class="details">
+    <p><strong>Full Name:</strong> <span id="confirmName"></span></p>
+    <p><strong>Address:</strong> <span id="confirmAddress"></span></p>
+    <p><strong>Phone Number:</strong> <span id="confirmPhone"></span></p>
+    <p><strong>Quantity:</strong> <span id="confirmQuantity"></span></p>
+    <p><strong>Payment Method:</strong> <span id="confirmPayment"></span></p>
+  </div>
+
+  <a href="animal.html" class="btn">Back to Home</a>
+</div>
+
+<script>
+  const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+  if (orderDetails) {
+    document.getElementById('confirmName').innerText = orderDetails.name;
+    document.getElementById('confirmAddress').innerText = orderDetails.address;
+    document.getElementById('confirmPhone').innerText = orderDetails.phone;
+    document.getElementById('confirmQuantity').innerText = orderDetails.quantity;
+    document.getElementById('confirmPayment').innerText = orderDetails.payment;
+  } else {
+    alert('No order details found! Redirecting to home page.');
+    window.location.href = 'index.html';
+  }
+</script>
+
+</body>
+</html>

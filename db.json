@@ -1,0 +1,11 @@
+[
+    {
+        "firstname": "John",
+        "lastname": "Doe",
+        "age": 25,
+        "place": "New York",
+        "mobile": "1234567890",
+        "username": "john_doe",
+        "password": "password123"
+    }
+]
