@@ -53,9 +53,5 @@ Simply open the `welcome.html` file in a browser to explore the system.
 
 ## 👥 Contributors
 
-- **Ullas S A**&#x20;
-
----
-
-Let me know if you'd like me to tweak anything or add more details! 🚀
+- Ullas S A
 
