@@ -1,3 +1,9 @@
+🌾 Animal Herd Welfare Management System  
+- A full-stack web app built to help farmers manage animal health and welfare.  
+- Built using [tech stack — HTML, CSS, JS, Django, etc.]  
+- Deployed online, recognized and published in local media.  
+- Built for real-world usage, helping farmers in [region/taluk].  
+
 # Animal Herd Welfare Management System
 
 An intuitive and user-friendly web-based application designed to manage and promote the welfare of animal herds. This project focuses on providing detailed information on various animal breeds, accessories, services, health consultations, and more — all built with a frontend-only approach.
