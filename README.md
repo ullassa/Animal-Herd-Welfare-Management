@@ -2,7 +2,9 @@
 - A full-stack web app built to help farmers manage animal health and welfare.  
 - Built using [tech stack — HTML, CSS, JS, Django, etc.]  
 - Deployed online, recognized and published in local media.  
-- Built for real-world usage, helping farmers in [region/taluk].  
+- Built for real-world usage, helping farmers in [region/taluk].
+
+  “I’ve built the frontend part and deployed it live for demonstration. The idea is original and addresses a real problem. I’m planning to integrate backend and database soon, but I prioritized UI/UX first.”
 
 # Animal Herd Welfare Management System
 
