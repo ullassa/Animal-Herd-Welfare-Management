@@ -5,7 +5,7 @@ Built using **HTML, CSS, JS**, and planned Django backend.
 Deployed online, recognized and published in local media.  
 Built for real-world usage, helping farmers in Sondekere (Hiriyur Taluk) and surrounding regions.
 
-> “I’ve built the frontend part and deployed it live for demonstration. The idea is original and addresses a real problem. I’m planning to integrate backend and database soon, but I prioritized UI/UX first.”
+ “I’ve built the frontend part and deployed it live for demonstration. The idea is original and addresses a real problem. I’m planning to integrate backend and database soon, but I prioritized UI/UX first.”
 
 ---
 
