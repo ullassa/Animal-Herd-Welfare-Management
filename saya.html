@@ -18,7 +18,6 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
 
     .top-bar {
@@ -30,8 +29,6 @@
       align-items: center;
       font-size: 1.1rem;
     }
-
-    
 
     header {
       display: flex;
@@ -70,7 +67,6 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      background-color: #3949ab;
     }
 
     nav ul li {
@@ -91,7 +87,7 @@
       border-radius: 5px;
     }
 
-    /* Modal Background */
+    /* Modal Styling */
     .modal {
       display: none;
       position: fixed;
@@ -103,18 +99,16 @@
       background-color: rgba(0, 0, 0, 0.4);
       justify-content: center;
       align-items: center;
-      overflow: hidden;
     }
 
-    /* Modal Content */
     .modal-content {
       background-color: #fefefe;
-      margin: 15% auto;
       padding: 20px;
       border: 1px solid #888;
       width: 40%;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     .close {
@@ -124,13 +118,12 @@
       position: absolute;
       top: 10px;
       right: 10px;
+      cursor: pointer;
     }
 
     .close:hover,
     .close:focus {
       color: black;
-      text-decoration: none;
-      cursor: pointer;
     }
 
     .modal input[type="text"],
@@ -157,23 +150,22 @@
       background-color: #1a237e;
     }
 
-    /* Image Styling */
+    /* Image Section */
     .image-container {
       position: relative;
-      height: 80vh; /* Makes image take most of the screen */
+      height: 80vh;
       background-image: url('animals.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
-      font-size: 2rem;
     }
 
     .image-container h2 {
       font-size: 3rem;
+      color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
@@ -196,6 +188,17 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Link override in top-bar */
+    .top-bar .right a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .top-bar .right a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -204,11 +207,10 @@
   <!-- Top Header -->
   <div class="top-bar">
     <div class="left">
-
-      <span> | Official Website of AHWMS</span>
+      <span>| Official Website of AHWMS</span>
     </div>
     <div class="right">
-      <a href="signin.html" onclick="openModal('signInModal')">Sign In</a>
+      <a href="#" onclick="openModal('signInModal')">Sign In</a>
       <a href="profile.html" target="_blank">Profile</a>
     </div>
   </div>
@@ -220,7 +222,6 @@
     </div>
     <div class="title">
       <h1>Animal Herd Welfare Management</h1>
-      
     </div>
   </header>
 
@@ -234,22 +235,16 @@
     </ul>
   </nav>
 
-
- <!-- Image Container -->
+  <!-- Image Section -->
   <div class="image-container">
-    
-  </div>
-  <div class="logo">
-    <img src="animals.jpg" >
+    <h2>Empowering Farmers, Caring for Animals</h2>
   </div>
 
-  
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Animal Herd Welfare Management System | All Rights Reserved</p>
-    <p><a href="terms.html" style="color: white;">Terms of Service</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+    <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
   </footer>
-
 
   <!-- Sign In Modal -->
   <div id="signInModal" class="modal">
@@ -274,15 +269,6 @@
       modals.forEach(modal => {
         modal.style.display = "none";
       });
-    }
-
-    function toggleSection(sectionId) {
-      var section = document.getElementById(sectionId);
-      if (section.style.display === "none") {
-        section.style.display = "block";
-      } else {
-        section.style.display = "none";
-      }
     }
   </script>
 
