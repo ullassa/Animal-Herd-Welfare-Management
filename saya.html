@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Animal Herd Welfare Management</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
   <style>
     body {
@@ -18,16 +18,37 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
     .top-bar {
       background-color: #283593;
-      color: #fff;
-      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 10px 20px;
+    }
+
+    .top-bar marquee {
+      width: 100%;
+      color: #ffeb3b;
+      font-weight: bold;
       font-size: 1.1rem;
+    }
+
+    .top-bar .right {
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    .top-bar .right a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .top-bar .right a:hover {
+      text-decoration: underline;
     }
 
     header {
@@ -67,6 +88,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
+      background-color: #3949ab;
     }
 
     nav ul li {
@@ -87,7 +109,6 @@
       border-radius: 5px;
     }
 
-    /* Modal Styling */
     .modal {
       display: none;
       position: fixed;
@@ -99,16 +120,17 @@
       background-color: rgba(0, 0, 0, 0.4);
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
 
     .modal-content {
       background-color: #fefefe;
+      margin: 15% auto;
       padding: 20px;
       border: 1px solid #888;
       width: 40%;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
     }
 
     .close {
@@ -118,12 +140,13 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      cursor: pointer;
     }
 
     .close:hover,
     .close:focus {
       color: black;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .modal input[type="text"],
@@ -150,7 +173,6 @@
       background-color: #1a237e;
     }
 
-    /* Image Section */
     .image-container {
       position: relative;
       height: 80vh;
@@ -160,16 +182,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
       text-align: center;
+      font-size: 2rem;
     }
 
     .image-container h2 {
       font-size: 3rem;
-      color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
-    /* Footer */
     footer {
       background-color: #283593;
       color: #fff;
@@ -188,27 +210,16 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    /* Link override in top-bar */
-    .top-bar .right a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-    }
-
-    .top-bar .right a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Top Header -->
+  <!-- Top Header with Marquee -->
   <div class="top-bar">
-    <div class="left">
-      <span>| Official Website of AHWMS</span>
-    </div>
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      Empowering Farmers, Caring for Animals
+    </marquee>
     <div class="right">
       <a href="#" onclick="openModal('signInModal')">Sign In</a>
       <a href="profile.html" target="_blank">Profile</a>
@@ -218,7 +229,7 @@
   <!-- Main Header -->
   <header>
     <div class="logo">
-      <img src="top.jpg" alt="Animal Welfare">
+      <img src="top.jpg" alt="Animal Welfare" />
     </div>
     <div class="title">
       <h1>Animal Herd Welfare Management</h1>
@@ -235,9 +246,13 @@
     </ul>
   </nav>
 
-  <!-- Image Section -->
+  <!-- Image Container -->
   <div class="image-container">
-    <h2>Empowering Farmers, Caring for Animals</h2>
+    <h2>Welcome to Animal Herd Welfare System</h2>
+  </div>
+
+  <div class="logo">
+    <img src="animals.jpg" alt="Animals">
   </div>
 
   <!-- Footer -->
@@ -252,8 +267,8 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Sign In</h2>
       <form>
-        <input type="text" id="signInUsername" name="username" placeholder="Username" required>
-        <input type="password" id="signInPassword" name="password" placeholder="Password" required>
+        <input type="text" id="signInUsername" name="username" placeholder="Username" required />
+        <input type="password" id="signInPassword" name="password" placeholder="Password" required />
         <button type="submit">Sign In</button>
       </form>
     </div>
@@ -269,6 +284,15 @@
       modals.forEach(modal => {
         modal.style.display = "none";
       });
+    }
+
+    function toggleSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section.style.display === "none") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
     }
   </script>
 
